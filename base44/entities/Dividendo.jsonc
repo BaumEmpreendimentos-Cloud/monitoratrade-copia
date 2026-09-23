@@ -1,0 +1,57 @@
+{
+  "name": "Dividendo",
+  "type": "object",
+  "properties": {
+    "grupo_id": {
+      "type": "string",
+      "title": "Grupo"
+    },
+    "grupo_nome": {
+      "type": "string",
+      "title": "Identificador"
+    },
+    "ativo": {
+      "type": "string",
+      "title": "Ativo"
+    },
+    "data_pagamento": {
+      "type": "string",
+      "format": "date",
+      "title": "Data de Pagamento"
+    },
+    "quantidade": {
+      "type": "number",
+      "minimum": 0,
+      "title": "Quantidade de A\u00e7\u00f5es"
+    },
+    "valor_por_acao": {
+      "type": "number",
+      "title": "Valor do Dividendo por A\u00e7\u00e3o"
+    },
+    "valor_total": {
+      "type": "number",
+      "title": "Valor Total"
+    }
+  },
+  "required": [
+    "grupo_id",
+    "ativo",
+    "data_pagamento",
+    "quantidade",
+    "valor_por_acao"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "The role of the user in the app",
+      "enum": [
+        "admin",
+        "user"
+      ]
+    },
+    "subscription_status": {
+      "type": "string",
+      "title": "Status da assinatura",
+      "enum": [
+        "none",
+        "active",
+        "past_due",
+        "canceled",
+        "incomplete"
+      ],
+      "default": "none"
+    },
+    "plan": {
+      "type": "string",
+      "title": "Plano"
+    },
+    "current_period_end": {
+      "type": "string",
+      "title": "Fim do per\u00edodo atual"
+    },
+    "trial_start": {
+      "type": "string",
+      "format": "date-time",
+      "title": "In\u00edcio do per\u00edodo de teste"
+    },
+    "blocked": {
+      "type": "boolean",
+      "title": "Bloqueado",
+      "default": false
+    },
+    "tracked_tickers": {
+      "type": "array",
+      "title": "Ativos acompanhados",
+      "items": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notif_push": {
+      "type": "boolean",
+      "title": "Notifica\u00e7\u00f5es Push",
+      "default": true
+    },
+    "notif_email": {
+      "type": "boolean",
+      "title": "Notifica\u00e7\u00f5es por E-mail",
+      "default": true
+    },
+    "notif_inapp": {
+      "type": "boolean",
+      "title": "Notifica\u00e7\u00f5es no App",
+      "default": true
+    },
+    "cpf": {
+      "type": "string",
+      "title": "CPF"
+    }
+  },
+  "required": [
+    "role"
+  ]
+}
